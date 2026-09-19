@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muslim HALL — направления дизайна</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    color-scheme: dark;
+  }
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:#0c0f0d;
+    color:#EFE6D2;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  .wrap{ max-width:1400px; margin:0 auto; padding:clamp(20px,4vw,56px) clamp(16px,3vw,40px); }
+  .lead{ text-align:center; margin-bottom:clamp(28px,5vw,56px); }
+  .lead h1{ font-family:'Prata',serif; font-weight:400; font-size:clamp(26px,4vw,44px); letter-spacing:.01em; color:#E7C877; }
+  .lead p{ margin-top:12px; color:#b9c4bb; font-size:clamp(14px,1.6vw,17px); }
+  .grid{ display:grid; grid-template-columns:1fr; gap:clamp(20px,3vw,32px); }
+  @media(min-width:900px){ .grid{ grid-template-columns:repeat(3,1fr); } }
+
+  .card{ border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.08); box-shadow:0 30px 60px -30px rgba(0,0,0,.7); }
+  .hero{ position:relative; min-height:340px; padding:30px 26px 34px; display:flex; flex-direction:column; justify-content:flex-end; isolation:isolate; }
+  .hero::after{ content:""; position:absolute; inset:0; z-index:-1; background:
+      radial-gradient(120% 80% at 78% 18%, rgba(226,180,90,.20), transparent 55%); }
+  .badge{ display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:6px 12px; border-radius:100px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; margin-bottom:auto; }
+  .logo-chip{ width:72px; height:72px; border-radius:50%; object-fit:contain; align-self:flex-start; margin-bottom:16px; box-shadow:0 6px 18px rgba(0,0,0,.4); background:#fff; padding:2px; }
+  .kicker{ font-size:12px; letter-spacing:.28em; text-transform:uppercase; margin-bottom:12px; opacity:.85; }
+  .htitle{ font-size:clamp(30px,3vw,40px); line-height:1.02; margin-bottom:12px; }
+  .hsub{ font-size:15px; max-width:34ch; opacity:.9; margin-bottom:20px; }
+  .cta{ display:inline-flex; align-self:flex-start; padding:12px 22px; border-radius:100px; font-weight:700; font-size:14px; text-decoration:none; }
+
+  .meta{ background:#12140f; padding:20px 22px 24px; }
+  .name{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#E7C877; margin-bottom:14px; font-weight:700; }
+  .swatches{ display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+  .sw{ flex:1 1 0; min-width:54px; height:46px; border-radius:10px; position:relative; border:1px solid rgba(255,255,255,.08); }
+  .sw span{ position:absolute; left:6px; bottom:5px; font-size:10px; font-weight:600; color:rgba(255,255,255,.9); text-shadow:0 1px 2px rgba(0,0,0,.6); }
+  .fonts{ font-size:13px; color:#c7cec4; }
+  .fonts b{ color:#EFE6D2; }
+  .fonts .row{ display:flex; justify-content:space-between; padding:7px 0; border-top:1px solid rgba(255,255,255,.06); }
+
+  /* ---- Direction A: Изумруд & Золото ---- */
+  .a .hero{ background:linear-gradient(160deg,#183524,#0e2116 70%); }
+  .a .badge{ background:rgba(231,200,119,.14); color:#E7C877; border:1px solid rgba(231,200,119,.35); }
+  .a .kicker{ color:#E7C877; }
+  .a .htitle{ font-family:'Prata',serif; font-weight:400; color:#F5ECD6; }
+  .a .htitle em{ font-style:normal; color:#E7C877; }
+  .a .hsub{ font-family:'Manrope',sans-serif; }
+  .a .cta{ background:linear-gradient(180deg,#E7C877,#C9A24B); color:#1a2e1e; box-shadow:0 10px 24px -8px rgba(201,162,75,.6); }
+
+  /* ---- Direction B: Малахит редакция ---- */
+  .b .hero{ background:linear-gradient(160deg,#20463c,#12312a 70%); }
+  .b .badge{ background:rgba(239,230,210,.1); color:#EFE6D2; border:1px solid rgba(239,230,210,.25); }
+  .b .kicker{ color:#CBB27A; }
+  .b .htitle{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(34px,3.4vw,46px); color:#F3EEE1; letter-spacing:.005em; }
+  .b .htitle em{ font-style:italic; color:#E3C98C; }
+  .b .hsub{ font-family:'Golos Text',sans-serif; }
+  .b .cta{ background:#EFE6D2; color:#173229; }
+
+  /* ---- Direction C: Тёмный нефрит & модерн ---- */
+  .c .hero{ background:linear-gradient(160deg,#15302a,#0c1f1b 70%); }
+  .c .badge{ background:rgba(226,180,90,.12); color:#E2B45A; border:1px solid rgba(226,180,90,.3); }
+  .c .kicker{ color:#9db3a3; }
+  .c .htitle{ font-family:'Spectral',serif; font-weight:600; color:#F1ECDD; }
+  .c .htitle em{ font-style:italic; color:#E2B45A; }
+  .c .hsub{ font-family:'Onest',sans-serif; }
+  .c .cta{ background:transparent; color:#E2B45A; border:1.5px solid #E2B45A; }
+
+  .note{ margin-top:clamp(28px,5vw,48px); background:#12140f; border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:22px 24px; font-size:14px; color:#c7cec4; }
+  .note b{ color:#E7C877; }
+  .note ul{ margin:10px 0 0 18px; }
+  .note li{ margin:5px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lead">
+    <h1>Muslim HALL — 3 направления для главной</h1>
+    <p>Один ДНК: тёмно-зелёный · золото · айвори (под ваш логотип). Разные шрифты и характер. Выберите номер — соберу полноценный Hero.</p>
+  </div>
+
+  <div class="grid">
+    <!-- A -->
+    <div class="card a">
+      <div class="hero">
+        <span class="badge">100% Халяль</span>
+        <img class="logo-chip" src="logo.JPG" alt="Muslim HALL">
+        <div class="kicker">С 1998 · Александровка</div>
+        <div class="htitle">Настоящая<br><em>дунганская</em> кухня</div>
+        <div class="hsub">6 кухонь под одной крышей. 680 мест. Свободно без брони.</div>
+        <a class="cta" href="#">Смотреть меню</a>
+      </div>
+      <div class="meta">
+        <div class="name">Вариант A · Изумруд &amp; Золото</div>
+        <div class="swatches">
+          <div class="sw" style="background:#0e2116"><span>#0E2116</span></div>
+          <div class="sw" style="background:#183524"><span>#183524</span></div>
+          <div class="sw" style="background:#C9A24B"><span>#C9A24B</span></div>
+          <div class="sw" style="background:#E7C877"><span>#E7C877</span></div>
+          <div class="sw" style="background:#F5ECD6"><span>#F5ECD6</span></div>
+        </div>
+        <div class="fonts">
+          <div class="row"><span>Заголовки</span><b>Prata</b></div>
+          <div class="row"><span>Текст</span><b>Manrope</b></div>
+          <div class="row" style="border:none"><span>Характер</span><span>Люкс, «золотая» дидон-подача</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B -->
+    <div class="card b">
+      <div class="hero">
+        <span class="badge">100% Халяль</span>
+        <img class="logo-chip" src="logo.JPG" alt="Muslim HALL">
+        <div class="kicker">С 1998 · Александровка</div>
+        <div class="htitle">Вкус, ради которого<br><em>приезжают</em></div>
+        <div class="hsub">Аутентичная дунганская кухня и мировые блюда под одной крышей.</div>
+        <a class="cta" href="#">Смотреть меню</a>
+      </div>
+      <div class="meta">
+        <div class="name">Вариант B · Малахит-редакция</div>
+        <div class="swatches">
+          <div class="sw" style="background:#12312a"><span>#12312A</span></div>
+          <div class="sw" style="background:#20463c"><span>#20463C</span></div>
+          <div class="sw" style="background:#CBB27A"><span>#CBB27A</span></div>
+          <div class="sw" style="background:#E3C98C"><span>#E3C98C</span></div>
+          <div class="sw" style="background:#EFE6D2"><span>#EFE6D2</span></div>
+        </div>
+        <div class="fonts">
+          <div class="row"><span>Заголовки</span><b>Cormorant Garamond</b></div>
+          <div class="row"><span>Текст</span><b>Golos Text</b></div>
+          <div class="row" style="border:none"><span>Характер</span><span>Мягкая элегантность, журнал</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="card c">
+      <div class="hero">
+        <span class="badge">100% Халяль</span>
+        <img class="logo-chip" src="logo.JPG" alt="Muslim HALL">
+        <div class="kicker">С 1998 · Александровка</div>
+        <div class="htitle">Дунганская<br><em>классика</em> Бишкека</div>
+        <div class="hsub">4.8★ на 2ГИС · 291 отзыв · 680 гостей · бесплатная парковка.</div>
+        <a class="cta" href="#">Смотреть меню</a>
+      </div>
+      <div class="meta">
+        <div class="name">Вариант C · Нефрит &amp; модерн</div>
+        <div class="swatches">
+          <div class="sw" style="background:#0c1f1b"><span>#0C1F1B</span></div>
+          <div class="sw" style="background:#15302a"><span>#15302A</span></div>
+          <div class="sw" style="background:#E2B45A"><span>#E2B45A</span></div>
+          <div class="sw" style="background:#9db3a3"><span>#9DB3A3</span></div>
+          <div class="sw" style="background:#F1ECDD"><span>#F1ECDD</span></div>
+        </div>
+        <div class="fonts">
+          <div class="row"><span>Заголовки</span><b>Spectral</b></div>
+          <div class="row"><span>Текст</span><b>Onest</b></div>
+          <div class="row" style="border:none"><span>Характер</span><span>Современно, редакционно, чисто</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Важно (нашёл при проверке):</b> ваш логотип <b>logo.JPG</b> — на белом квадратном фоне. На тёмно-зелёном он даёт светлый «прямоугольник».
+    <ul>
+      <li>Для Hero сделаю его на кремовом круге-медальоне (как сейчас в превью) — смотрится премиально.</li>
+      <li>Либо, если пришлёте логотип <b>PNG с прозрачным фоном</b> — вставлю чисто, без подложки. Так лучше всего.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
